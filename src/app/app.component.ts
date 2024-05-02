@@ -7,13 +7,14 @@ import { ConnectionService } from './service/connection.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  dataApi:any = ''
   title = 'fakeApi';
 
   constructor(private connection:ConnectionService){}
 
   ngOnInit(): void {
     this.connection.getData().subscribe(data => {
-      console.log(data)
+      this.dataApi = data
     })
   }
 }
